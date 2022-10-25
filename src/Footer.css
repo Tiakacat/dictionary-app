@@ -1,0 +1,9 @@
+.footer {
+  display: block;
+  text-align: center;
+  margin: 20px auto;
+  color: #063634;
+  font-size: 13px;
+  font-family: "Mali", cursive;
+  font-weight: 200 !important;
+}
