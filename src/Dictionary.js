@@ -7,24 +7,25 @@ export default function Dictionary() {
   }
   return (
     <div className="Dictionary">
-      <form onSubmit={search}>
+      <form className="mt-4" onSubmit={search}>
+        <header class="Header-name mt-3">Discover the World of Words</header>
         <div className="row">
           <div className="col-6">
             <input
+              className="mt-2 form-control shadow w=100"
               type="search"
               autoFocus={true}
-              placeholder="What is your word?"
+              placeholder="Type your word"
               // onChange={findWord}
-              className="form-control shadow w=100"
             />
           </div>
           <div className="col-3">
             <button
-              className="btn btn-outline-danger shadow"
-              type="submit"
+              className="mt-2 btn btn-outline-danger shadow ms-2"
+              type="button"
               value="search"
             >
-              Let's find out!
+              🔍
             </button>
           </div>
         </div>
