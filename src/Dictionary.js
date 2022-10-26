@@ -3,15 +3,15 @@ import axios from "axios";
 import "./Dictionary.css";
 
 export default function Dictionary() {
-  let [keyword, setKeyword] = useState(null);
-
+  let [keyword, setKeyword] = useState("");
+  let [definition, setDefinition] = useState({});
   function handleResponse(response) {
-    console.log(response);
+    console.log(response.data[0]);
   }
 
   function search(event) {
     event.preventDefault();
-    let apiUrl = "https://api.dictionaryapi.dev/api/v2/entries/en/${keyword}";
+    let apiUrl = `https://api.dictionaryapi.dev/api/v2/entries/en/${keyword}`;
     axios.get(apiUrl).then(handleResponse);
   }
 
@@ -20,7 +20,7 @@ export default function Dictionary() {
   }
   return (
     <div className="Dictionary">
-      <form className="mt-4" onSubmit={search}>
+      <form onSubmit={search} className="mt-4">
         <header class="Header-name mt-3">Discover the World of Words</header>
         <div className="row">
           <div className="col-6">
