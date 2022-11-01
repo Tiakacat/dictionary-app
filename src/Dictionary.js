@@ -13,9 +13,13 @@ export default function Dictionary() {
     console.log(response.data[0]);
     setResults(response.data[0]);
   }
-
-  function search(event) {
+  function handleSubmit(event) {
     event.preventDefault();
+    search();
+  }
+
+  function search() {
+    // event.preventDefault();
     let apiUrl = `https://api.dictionaryapi.dev/api/v2/entries/en/${keyword}`;
     axios.get(apiUrl).then(handleResponse);
 
@@ -40,7 +44,7 @@ export default function Dictionary() {
 
   return (
     <div className="Dictionary">
-      <form onSubmit={search} className="mt-4">
+      <form onSubmit={handleSubmit} className="mt-4">
         <header class="Header-name mt-3">Discover the World of Words</header>
         <div className="row">
           <div className="col-6">

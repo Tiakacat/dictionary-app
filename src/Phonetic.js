@@ -2,18 +2,15 @@ import React from "react";
 import ReactAudioPlayer from "react-audio-player";
 
 export default function Phonetic(props) {
+  console.log(props);
   return (
     <div className="row">
-      {props.response.phonetics.map(function (phonetic, index) {
-        if (phonetic.audio && phonetic.text)
-          return (
-            <div className="col-sm-6 container-fluid">
-              <ReactAudioPlayer src={phonetic.audio} controls />
-              <div key={index}>{phonetic.text}</div>
-            </div>
-          );
-        else return null;
-      })}
+      {props.phonetic && (
+        <div className="col-sm-6 container-fluid">
+          <ReactAudioPlayer src={props.phonetic.audio} controls />
+          <div>{props.phonetic.text}</div>
+        </div>
+      )}
     </div>
   );
 }
