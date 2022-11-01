@@ -1,22 +1,37 @@
 import React from "react";
 import Meaning from "./Meaning";
 import Phonetic from "./Phonetic";
+import Photos from "./Photos";
+import Synonyms from "./Synonyms";
 
 export default function Results(props) {
   if (props.results) {
     return (
-      <div className="Results">
-        <section>
-          <h2>{props.results.word}</h2>
-          <Phonetic response={props.response} />
-        </section>
-        {props.results.meanings.map(function(meaning, index) {
-          return (
-            <section key={index}>
-              <Meaning meaning={meaning} />
-            </section>
-          );
-        })}
+      <div className="row">
+        <div className="col-sm-6 word-definition">
+          <section>
+            <h2>{props.results.word}</h2>
+            {props.results.phonetics.map(function(phonetic, index) {
+              if (phonetic.audio.length > 0) {
+                return <Phonetic phonetic={phonetic} key={index} />;
+              } else {
+                return null;
+              }
+            })}
+          </section>
+          {props.results.meanings.map(function(meaning, index) {
+            return (
+              <section className="partOfSpeech" key={index}>
+                <Meaning meaning={meaning} />
+              </section>
+            );
+          })}
+        </div>
+        <div className="col-sm-6 word-definition">
+          <Photos photos={props.photos} />
+          <section className="partOfSpeech">Synonyms</section>
+          <Synonyms response={props.response} />
+        </div>
       </div>
     );
   } else {

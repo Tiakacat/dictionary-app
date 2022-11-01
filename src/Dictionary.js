@@ -44,31 +44,32 @@ export default function Dictionary() {
 
   return (
     <div className="Dictionary">
-      <form onSubmit={handleSubmit} className="mt-4">
-        <header class="Header-name mt-3">Discover the World of Words</header>
-        <div className="row">
-          <div className="col-6">
-            <input
-              className="mt-2 form-control shadow w=100"
-              type="search"
-              autoFocus={true}
-              placeholder="Type your word"
-              onChange={typeKeyword}
-            />
+      <section>
+        <form onSubmit={handleSubmit} className="mt-4">
+          <header class="Header-name mt-3">Discover the World of Words</header>
+          <div className="row">
+            <div className="col-6">
+              <input
+                className="mt-2 form-control shadow w=100"
+                type="search"
+                autoFocus={true}
+                placeholder="Type your word"
+                onChange={typeKeyword}
+              />
+            </div>
+            <div className="col-3">
+              <button
+                className="mt-2 btn btn-outline-secondary shadow ms-2"
+                type="button"
+                onClick={handleClick}
+              >
+                🔍
+              </button>
+            </div>
           </div>
-          <div className="col-3">
-            <button
-              className="mt-2 btn btn-outline-danger shadow ms-2"
-              type="button"
-              onClick={handleClick}
-            >
-              🔍
-            </button>
-          </div>
-        </div>
-      </form>
-      <Results results={results} />
-      <Photos photos={photos} />
+        </form>
+      </section>
+      <Results results={results} photos={photos} />
     </div>
   );
 }
