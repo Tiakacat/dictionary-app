@@ -3,11 +3,11 @@ import ReactAudioPlayer from "react-audio-player";
 
 export default function Phonetic(props) {
   return (
-    <div className="row">
+    <div className="audio-player">
       {props.phonetic && (
         <div className="col-sm-6 container-fluid">
           <ReactAudioPlayer src={props.phonetic.audio} controls />
-          <div>{props.phonetic.text}</div>
+          <div className="text-center">{props.phonetic.text}</div>
         </div>
       )}
     </div>

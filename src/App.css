@@ -25,11 +25,11 @@ section {
   font-size: 60px;
   text-align: center;
 }
-.Header-name {
-  font-size: 84px;
-  font-weight: 400;
+
+.Synonyms {
+  padding: 20px;
 }
 
-.partOfSpeech {
-  /* font-family: "Rock Salt", cursive; */
+a {
+  color: red;
 }

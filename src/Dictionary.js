@@ -24,7 +24,7 @@ export default function Dictionary() {
     axios.get(apiUrl).then(handleResponse);
 
     let pexelAPIkey = `563492ad6f91700001000001f753905d78644583bb94ff5889211c6b`;
-    let pexelURL = `https://api.pexels.com/v1/search?query=${keyword}&per_page=12`;
+    let pexelURL = `https://api.pexels.com/v1/search?query=${keyword}&per_page=9`;
     let headers = { Authorization: `Bearer ${pexelAPIkey}` };
     axios.get(pexelURL, { headers: headers }).then(handlePexelResponse);
   }
@@ -46,7 +46,9 @@ export default function Dictionary() {
     <div className="Dictionary">
       <section>
         <form onSubmit={handleSubmit} className="mt-4">
-          <header class="Header-name mt-3">Discover the World of Words</header>
+          <header className="Header-name mt-3">
+            Discover the World of Words
+          </header>
           <div className="row">
             <div className="col-6">
               <input
