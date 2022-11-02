@@ -10,7 +10,7 @@ export default function Results(props) {
       <div className="row">
         <div className="col-sm-6 word-definition">
           <section>
-            <h2>{props.results.word}</h2>
+            <h2 className="Header-name text-danger">{props.results.word}</h2>
             {props.results.phonetics.map(function(phonetic, index) {
               if (phonetic.audio.length > 0) {
                 return <Phonetic phonetic={phonetic} key={index} />;
@@ -29,8 +29,10 @@ export default function Results(props) {
         </div>
         <div className="col-sm-6 word-definition">
           <Photos photos={props.photos} />
-          <section className="partOfSpeech">Synonyms</section>
-          <Synonyms response={props.response} />
+          <section className="partOfSpeech">
+            <h3 className="Header-subname text-dark"> Synonyms</h3>
+            <Synonyms response={props.results.meanings} />
+          </section>
         </div>
       </div>
     );

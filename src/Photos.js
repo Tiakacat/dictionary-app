@@ -1,9 +1,10 @@
 import React from "react";
 
 export default function Photos(props) {
+  console.log(props.photo);
   if (props.photos)
     return (
-      <section>
+      <section className="opacity-100">
         <div className="ms-3 me-3">
           <div className="row mt-4">
             {props.photos.map(function(photo, index) {
