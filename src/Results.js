@@ -29,10 +29,16 @@ export default function Results(props) {
         </div>
         <div className="col-sm-6 word-definition">
           <Photos photos={props.photos} />
-          <section className="partOfSpeech">
-            <h3 className="Header-subname text-dark"> Synonyms</h3>
-            <Synonyms response={props.results.meanings} />
-          </section>
+          {props.results.meanings.some((meaning) => meaning.synonyms.length) ? (
+            <section className="partOfSpeech">
+              <h3 className="Header-subname text-dark"> Synonyms</h3>
+              <Synonyms response={props.results.meanings} />
+            </section>
+          ) : (
+            <section className="partOfSpeech">
+              <p>Sorry, no synonyms found.</p>
+            </section>
+          )}
         </div>
       </div>
     );
