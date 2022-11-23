@@ -36,7 +36,8 @@ export default function Results(props) {
             </section>
           ) : (
             <section className="partOfSpeech">
-              <p>Sorry, no synonyms found.</p>
+              <h3 className="Header-subname text-dark"> Synonyms</h3>
+              <p>Sorry, no synonyms found ⛔️</p>
             </section>
           )}
         </div>
