@@ -4,6 +4,8 @@
   min-height: 800px;
   max-width: 900px;
   background-image: url(/media/dictionary.jpeg);
+  border-radius: 5px;
+  box-shadow: hsla(43, 26%, 62%, 0.8) 0px 10px 10px 0;
 }
 
 section {
